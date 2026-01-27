@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ahmed Emad - Madar X</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #fdfafb;
+            --bg-card: #ffffff;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --footer-bg: #2d3436;
+            --shadow: 0 10px 25px rgba(0,0,0,0.05);
+            --accent-glow: #ff4757; 
+        }
+
+        .dark-mode {
+            --bg-body: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --text-main: #f5f5f5;
+            --text-sub: #b2bec3;
+            --footer-bg: #000000;
+            --shadow: 0 10px 30px rgba(0,0,0,0.5);
+            --accent-glow: #ff6b81;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .card-id {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 10px;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        .toggle-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc; transition: .4s; border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute; content: ""; height: 14px; width: 14px;
+            left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;
+        }
+        input:checked + .slider { background-color: var(--accent-glow); }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        .header-container {
+            width: 100%;
+            max-width: 450px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width:  230px;
+            height: 230px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 0 25px var(--accent-glow);
+            border: 4px solid var(--bg-card);
+            background: #eee;
+        }
+
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .info-card {
+            text-align: center;
+            margin-top: 15px;
+            padding: 0 20px;
+        }
+
+        .info-card h1 { margin: 0; font-size: 24px; font-weight: 700; color: var(--text-main); }
+        .info-card p { margin: 5px 0; font-size: 16px; color: var(--accent-glow); font-weight: 600; }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 25px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .slide {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border-right: 4px solid transparent;
+        }
+
+        .slide:hover { transform: scale(1.02); }
+
+        .icon { width: 24px; height: 24px; margin-left: 15px; }
+
+        .fb { border-right-color: #1877f2; }
+        .ig { border-right-color: #e1306c; }
+        .wa { border-right-color: #25d366; }
+        .tk { border-right-color: #000000; }
+        .tg { border-right-color: #0088cc; }
+        .sc { border-right-color: #FFFC00; }
+        
+        .save-btn {
+            background: var(--accent-glow) !important;
+            color: white !important;
+            justify-content: center;
+            margin-top: 10px;
+            cursor: pointer;
+            border-right: none !important;
+        }
+
+        footer {
+            margin-top: auto;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background: var(--footer-bg);
+            font-size: 12px;
+            color: #ccc;
+        }
+        footer a { color: #fff; text-decoration: none; font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <div class="card-id">ID: A1</div>
+
+    <div class="toggle-wrapper">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="header-container">
+        <div class="profile-img">
+            <img src="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/69622f7e459753fa3e3859ce/sh_1769545476459.jpg" alt="Dr. Ahmed Emad">
+        </div>
+    </div>
+
+    <div class="info-card">
+        <h1>𝐷𝑟. 𝐴ℎ𝑚𝑒𝑑 𝐸𝑚𝑎𝑑</h1>
+        <p>𝑃ℎ𝑎𝑟𝑚𝑎𝑐𝑖𝑠𝑡</p>
+    </div>
+
+    <div class="container">
+        
+        <a href="https://www.facebook.com/share/1H4Xu36QLq/" class="slide fb" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" class="icon">
+            فيسبوك - Facebook
+        </a>
+        
+        <a href="https://www.instagram.com/ielomda1?igsh=MW5wcDBqNTc3MGhweQ==" class="slide ig" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="icon">
+            انستجرام - Instagram
+        </a>
+
+        <a href="https://wa.me/201004935932" class="slide wa" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="icon">
+            واتساب - WhatsApp
+        </a>
+
+        <a href="https://www.tiktok.com/@dr.ahmedemad1?_r=1&_t=ZS-93Qic1bVppo" class="slide tk" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon">
+            تيك توك - TikTok
+        </a>
+
+        <a href="https://t.me/DrAhmed_Emad" class="slide tg" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="icon">
+            تيليجرام - Telegram
+        </a>
+
+        <a href="https://www.snapchat.com/add/dr_omda2025?share_id=R035wHnYThE&locale=en-GB" class="slide sc" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111615.png" class="icon">
+            سناب شات - Snapchat
+        </a>
+
+        <div onclick="saveAllInfo()" class="slide save-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/2874/2874050.png" class="icon" style="filter: brightness(0) invert(1);">
+            حفظ كافة الروابط والبيانات
+        </div>
+
+    </div>
+
+    <footer>
+        By <a href="https://ielomda75-hash.github.io/madarx/" target="_blank">Madar X</a>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggle.checked = true;
+        }
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // وظيفة حفظ كافة الروابط في ملف نصي
+        function saveAllInfo() {
+            const info = `بيانات التواصل - Dr. Ahmed Emad\n` +
+                         `----------------------------\n` +
+                         `الاسم: Dr. Ahmed Emad\n` +
+                         `المهنة: Pharmacist\n` +
+                         `واتساب: https://wa.me/201004935932\n` +
+                         `فيسبوك: https://www.facebook.com/share/1H4Xu36QLq/\n` +
+                         `انستجرام: https://www.instagram.com/ielomda1?igsh=MW5wcDBqNTc3MGhweQ==\n` +
+                         `تيك توك: https://www.tiktok.com/@dr.ahmedemad1?_r=1&_t=ZS-93Qic1bVppo\n` +
+                         `تيليجرام: https://t.me/DrAhmed_Emad\n` +
+                         `سناب شات: https://www.snapchat.com/add/dr_omda2025?share_id=R035wHnYThE&locale=en-GB\n` +
+                         `----------------------------\n` +
+                         `Powered by Madar X`;
+            
+            const blob = new Blob([info], { type: "text/plain;charset=utf-8" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'Dr_Ahmed_Emad_Links.txt'; // اسم الملف الذي سيتم تحميله
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+</html>
